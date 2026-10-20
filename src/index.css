@@ -1,0 +1,504 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+@theme {
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Duchess Naturals Inspired Color Palette: Organic Forest Green, Fresh Leaf, Warm Harvest Gold */
+  --color-duchess-forest: #15652e;
+  --color-duchess-forest-dark: #0f2e1b;
+  --color-duchess-forest-deep: #0a1f12;
+  --color-duchess-forest-light: #1e7e34;
+  --color-duchess-leaf: #83b735;
+  --color-duchess-leaf-light: #a1c62d;
+  --color-duchess-leaf-dark: #65a30d;
+  --color-duchess-gold: #fcb900;
+  --color-duchess-gold-warm: #fed700;
+  --color-duchess-amber: #f59e0b;
+  --color-duchess-amber-dark: #d97706;
+  --color-duchess-sand: #fbfbf8;
+  --color-duchess-ivory: #f4f7f4;
+  --color-duchess-sage: #e8efe6;
+
+  /* Intermediate slate shades for standard dark theme */
+  --color-slate-850: #172033;
+  --color-slate-750: #293548;
+}
+
+.font-display {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* GPS Pulsing Beacon & Radar Animations */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.radar-ping {
+  animation: radar-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Animated Logistics Route Dashflow Lines */
+@keyframes route-flow-forward {
+  from {
+    stroke-dashoffset: 48;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes route-flow-reverse {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 48;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(229, 167, 56, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(229, 167, 56, 0.85));
+  }
+}
+
+.route-flow-animated {
+  stroke-dasharray: 10 8;
+  animation: route-flow-forward 1.4s linear infinite;
+}
+
+.route-flow-animated-fast {
+  stroke-dasharray: 12 6;
+  animation: route-flow-forward 0.9s linear infinite;
+}
+
+.route-glow-amber {
+  filter: drop-shadow(0 0 6px rgba(229, 167, 56, 0.8));
+}
+
+.route-glow-cyan {
+  filter: drop-shadow(0 0 6px rgba(20, 184, 166, 0.8));
+}
+
+.route-glow-emerald {
+  filter: drop-shadow(0 0 6px rgba(15, 161, 104, 0.8));
+}
+
+.route-glow-indigo {
+  filter: drop-shadow(0 0 6px rgba(31, 126, 204, 0.8));
+}
+
+/* Floating Offer Marquee Ticker Animations */
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-left 32s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll-right 32s linear infinite;
+}
+
+.animate-marquee-fast {
+  animation-duration: 22s;
+}
+
+.animate-marquee-slow {
+  animation-duration: 48s;
+}
+
+.marquee-pause-hover:hover .animate-marquee-left,
+.marquee-pause-hover:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+.animate-float-subtle {
+  animation: float-subtle 3s ease-in-out infinite;
+}
+
+/* Custom Leaflet Dark Radar Tile Inversion / Clean styling */
+.leaflet-container {
+  font-family: inherit;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+  background-color: #020617 !important;
+  color: #ffffff !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid #334155 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5) !important;
+}
+
+.leaflet-popup-tip {
+  background-color: #020617 !important;
+}
+
+/* Custom Leaflet Markers & Fleet Animations */
+.custom-truck-fleet-icon,
+.custom-hub-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+@keyframes radar-ping-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.radar-ping {
+  animation: radar-ping-pulse 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes route-flow-dash {
+  to {
+    stroke-dashoffset: -40;
+  }
+}
+
+.route-flow-animated {
+  animation: route-flow-dash 3s linear infinite;
+}
+
+.route-flow-animated-fast {
+  animation: route-flow-dash 1.4s linear infinite;
+}
+
+/* Light Mode Theme Overrides */
+.theme-light {
+  color-scheme: light;
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+.theme-light .bg-slate-950 {
+  background-color: #f8fafc !important;
+}
+
+.theme-light .bg-slate-900 {
+  background-color: #ffffff !important;
+}
+
+.theme-light .bg-slate-800 {
+  background-color: #f1f5f9 !important;
+}
+
+.theme-light .bg-slate-800\/60 {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+.theme-light .bg-slate-900\/90 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.theme-light .bg-slate-950\/80 {
+  background-color: rgba(248, 250, 252, 0.9) !important;
+}
+
+.theme-light .bg-slate-950\/90 {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+}
+
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+.theme-light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+.theme-light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+.theme-light .text-slate-300 {
+  color: #334155 !important;
+}
+
+.theme-light .text-slate-400 {
+  color: #475569 !important;
+}
+
+.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+.theme-light .text-amber-400 {
+  color: #d97706 !important;
+}
+
+.theme-light .text-amber-300 {
+  color: #b45309 !important;
+}
+
+.theme-light .text-slate-950 {
+  color: #0f172a !important;
+}
+
+.theme-light button.bg-amber-500,
+.theme-light a.bg-amber-500,
+.theme-light div.bg-amber-500 {
+  background-color: #d97706 !important;
+  color: #ffffff !important;
+}
+
+.theme-light button.bg-amber-500:hover {
+  background-color: #b45309 !important;
+}
+
+.theme-light .bg-amber-500\/10 {
+  background-color: rgba(217, 119, 6, 0.12) !important;
+}
+
+.theme-light .bg-amber-500\/15 {
+  background-color: rgba(217, 119, 6, 0.18) !important;
+}
+
+.theme-light .bg-amber-500\/20 {
+  background-color: rgba(217, 119, 6, 0.22) !important;
+}
+
+.theme-light .border-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+.theme-light .border-slate-700 {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .border-slate-800\/80 {
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+.theme-light .border-slate-800\/50 {
+  border-color: rgba(226, 232, 240, 0.5) !important;
+}
+
+.theme-light header {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Modern Non-Generic Glow & Material Utilities */
+.ambient-glow-amber {
+  box-shadow: 0 10px 40px -10px rgba(245, 158, 11, 0.18);
+}
+
+.ambient-glow-emerald {
+  box-shadow: 0 10px 40px -10px rgba(16, 185, 129, 0.2);
+}
+
+.ambient-glow-forest {
+  box-shadow: 0 12px 40px -10px rgba(21, 101, 46, 0.3);
+}
+
+.ambient-glow-leaf {
+  box-shadow: 0 10px 30px -8px rgba(131, 183, 53, 0.35);
+}
+
+.ambient-glow-gold {
+  box-shadow: 0 12px 40px -10px rgba(252, 185, 0, 0.25);
+}
+
+.duchess-card-clean {
+  background: rgba(15, 46, 27, 0.45);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(131, 183, 53, 0.22);
+}
+
+.duchess-card-subtle {
+  background: rgba(10, 31, 18, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(21, 101, 46, 0.35);
+}
+
+.duchess-pill-leaf {
+  background: rgba(131, 183, 53, 0.12);
+  color: #83b735;
+  border: 1px solid rgba(131, 183, 53, 0.3);
+}
+
+.duchess-pill-gold {
+  background: rgba(252, 185, 0, 0.12);
+  color: #fcb900;
+  border: 1px solid rgba(252, 185, 0, 0.35);
+}
+
+.duchess-pill-forest {
+  background: rgba(21, 101, 46, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(21, 101, 46, 0.4);
+}
+
+.ambient-glow-blue {
+  box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.2);
+}
+
+.hairline-border-amber {
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.hairline-border-subtle {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Print Styles for Physical Documents and Checklist */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Hide non-printable app UI elements during print */
+  header,
+  footer,
+  #quick-call-bar,
+  #floating-chat-widget,
+  #back-to-top,
+  .no-print,
+  nav,
+  button:not(.print-keep),
+  .leaflet-container {
+    display: none !important;
+  }
+
+  /* Target printable checklist specifically if present */
+  .printable-document {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Target Document Vault Print-Friendly Sheet specifically */
+  #document-print-preview-modal {
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    display: block !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  #document-print-preview-modal header,
+  #print-settings-drawer,
+  #document-print-preview-modal button,
+  #document-print-preview-modal select,
+  #document-print-preview-modal input {
+    display: none !important;
+  }
+
+  #print-sheet-viewport {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  #print-sheet-viewport > div {
+    transform: none !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  #printable-vault-document-sheet {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  .print-page-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-page-break-before {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+
+  /* Force background colors and border printing */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

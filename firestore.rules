@@ -1,0 +1,40 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Test connection document
+    match /test/connection {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Customer User profile and private sub-resources
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+
+      match /shipments/{shipmentId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /documents/{documentId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+
+      match /quotes/{quoteId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    // Investor truck fleet registrations and verification surveys
+    match /investorRegistrations/{registrationId} {
+      allow create: if true;
+      allow read: if request.auth != null;
+      allow update, delete: if request.auth != null;
+    }
+
+    // WhatsApp Lead Conversion click tracking and admin analytics
+    match /leadConversions/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if true;
+    }
+  }
+}

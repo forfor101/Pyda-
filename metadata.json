@@ -1,0 +1,6 @@
+{
+  "name": "Pyda Movers & Logistics",
+  "description": "Mobile-responsive corporate freight and relocation platform featuring interactive cost calculator, real-time shipment tracking, Leaflet Active Fleet Overview map with live telematics, Vehicle Health Monitor with drag-and-drop interactive maintenance deadline calendar, client Document Vault with multi-document bulk print and consolidated PDF package export, PKI digital contract signatures, automated Twilio SMS alerts, and executive investor commission statement generation.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

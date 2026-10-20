@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+                            http://www.google.com/schemas/sitemap-image/1.1
+                            http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Pyda Movers Nigeria Modern Logistics Fleet</image:title>
+      <image:caption>Heavy haulage trucks and specialized relocation vehicles in Nigeria.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Pyda Corporate Relocation Dispatch Hub</image:title>
+      <image:caption>Zero-downtime office migration and nationwide haulage.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Relocation and Logistics Services Nigeria</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/corporate</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Corporate Office Migration and Workstation Packing</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/commercial</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Commercial Warehouse Facility Relocation Logistics</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/residential</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Residential Moving and Packing Service</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/haulage</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Heavy Freight Haulage Trucking Fleet Nigeria</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#calculator</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Pyda Moving Cost and CBM Calculator</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#checklist</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Interactive Moving Day Preparation Planner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#tracking</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Live Shipment GPS Tracking</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#coverage</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80</image:loc>
+      <image:title>Nigeria and Pan-Africa Logistics Coverage Map</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#about</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#contact</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#careers</loc>
+    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+</urlset>

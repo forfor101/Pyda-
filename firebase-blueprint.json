@@ -1,0 +1,166 @@
+{
+  "entities": {
+    "CustomerUser": {
+      "title": "Customer User Profile",
+      "description": "Authenticated customer user profile for the client portal.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fullName": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "companyName": { "type": "string" },
+        "defaultCity": { "type": "string" },
+        "role": { "type": "string", "enum": ["client", "corporate_admin"] },
+        "registeredAt": { "type": "string" }
+      },
+      "required": ["id", "email", "fullName"]
+    },
+    "CustomerShipment": {
+      "title": "Customer Shipment",
+      "description": "Shipment tracking record associated with an authenticated customer.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "trackingCode": { "type": "string" },
+        "serviceType": { "type": "string" },
+        "originCity": { "type": "string" },
+        "destinationCity": { "type": "string" },
+        "currentStatus": { "type": "string", "enum": ["manifest_created", "loading_in_progress", "in_transit", "interstate_checkpoint", "out_for_delivery", "delivered_cleared"] },
+        "estimatedDelivery": { "type": "string" },
+        "truckPlate": { "type": "string" },
+        "driverName": { "type": "string" },
+        "driverPhone": { "type": "string" },
+        "lastCheckpoint": { "type": "string" },
+        "cargoDescription": { "type": "string" },
+        "waybillNumber": { "type": "string" },
+        "updatedAt": { "type": "string" },
+        "smsNotificationsEnabled": { "type": "boolean" },
+        "smsNotificationPhone": { "type": "string" },
+        "smsLastDispatchedAt": { "type": "string" },
+        "smsLastDispatchedSid": { "type": "string" }
+      },
+      "required": ["id", "trackingCode", "originCity", "destinationCity", "currentStatus"]
+    },
+    "VaultDocument": {
+      "title": "Vault Document",
+      "description": "Official relocation documents, waybills, insurance certificates, and signed contracts.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string", "enum": ["insurance", "agreement", "waybill", "pod", "invoice", "customs"] },
+        "referenceNumber": { "type": "string" },
+        "issuedDate": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "signedStatus": { "type": "string", "enum": ["pending_signature", "signed", "not_required"] },
+        "signedAt": { "type": "string" },
+        "sha256Hash": { "type": "string" },
+        "downloadUrl": { "type": "string" }
+      },
+      "required": ["id", "name", "type", "referenceNumber"]
+    },
+    "CustomerSavedQuote": {
+      "title": "Customer Saved Quote",
+      "description": "Saved moving quote estimate for the authenticated client.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "serviceType": { "type": "string" },
+        "originCity": { "type": "string" },
+        "destinationCity": { "type": "string" },
+        "movingDate": { "type": "string" },
+        "propertySize": { "type": "string" },
+        "estimatedCostNaira": { "type": "number" },
+        "status": { "type": "string" },
+        "savedAt": { "type": "string" }
+      },
+      "required": ["id", "serviceType", "originCity", "destinationCity", "estimatedCostNaira"]
+    },
+    "InvestorTruckRegistration": {
+      "title": "Investor Truck Registration",
+      "description": "Fleet partner registration application including truck specifications, capacity, survey photos, and inspection preferences.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "registeredAt": { "type": "string" },
+        "referenceCode": { "type": "string" },
+        "investorName": { "type": "string" },
+        "phone": { "type": "string" },
+        "whatsapp": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "companyName": { "type": "string" },
+        "cityLocation": { "type": "string" },
+        "truckMake": { "type": "string" },
+        "truckModel": { "type": "string" },
+        "modelYear": { "type": "number" },
+        "truckCategory": { "type": "string" },
+        "tonnageCapacity": { "type": "number" },
+        "cubicCapacityCbm": { "type": "number" },
+        "cargoLengthFt": { "type": "string" },
+        "axleConfig": { "type": "string" },
+        "payloadKg": { "type": "number" },
+        "bodyType": { "type": "string" },
+        "plateNumber": { "type": "string" },
+        "chassisVin": { "type": "string" },
+        "currentOdometerKm": { "type": "number" },
+        "surveyPhotos": { "type": "array" },
+        "preferredModel": { "type": "string" },
+        "expectedMonthlyPayoutNaira": { "type": "number" },
+        "roadworthinessValid": { "type": "boolean" },
+        "insuranceStatus": { "type": "string" },
+        "inspectionCity": { "type": "string" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "referenceCode", "investorName", "phone", "truckMake", "truckModel", "tonnageCapacity", "plateNumber"]
+    },
+    "WhatsAppLeadConversion": {
+      "title": "WhatsApp Lead Conversion",
+      "description": "Event tracking record of WhatsApp Business inquiries and click conversions across pages.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "pageUrl": { "type": "string" },
+        "pagePath": { "type": "string" },
+        "pageTitle": { "type": "string" },
+        "source": { "type": "string" },
+        "sourceLabel": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "inquiryMessage": { "type": "string" },
+        "status": { "type": "string", "enum": ["new_lead", "contacted", "quote_sent", "booked", "archived"] },
+        "deviceType": { "type": "string", "enum": ["mobile", "tablet", "desktop"] },
+        "referrer": { "type": "string" },
+        "notes": { "type": "string" },
+        "assignedStaff": { "type": "string" }
+      },
+      "required": ["id", "timestamp", "pagePath", "source", "whatsappNumber", "status"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "CustomerUser",
+      "description": "Customer profile document containing personal contact info and corporate affiliation."
+    },
+    "/users/{userId}/shipments/{shipmentId}": {
+      "schema": "CustomerShipment",
+      "description": "Customer-specific shipment history and active freight tracking details."
+    },
+    "/users/{userId}/documents/{documentId}": {
+      "schema": "VaultDocument",
+      "description": "Customer Document Vault containing insurance policies, signed contracts, and electronic waybills."
+    },
+    "/users/{userId}/quotes/{quoteId}": {
+      "schema": "CustomerSavedQuote",
+      "description": "Saved relocation quotes and cost estimates."
+    },
+    "/investorRegistrations/{registrationId}": {
+      "schema": "InvestorTruckRegistration",
+      "description": "Submitted truck registrations and vehicle verification surveys from fleet owners and investors."
+    },
+    "/leadConversions/{leadId}": {
+      "schema": "WhatsAppLeadConversion",
+      "description": "Logged WhatsApp Business conversion events and page inquiry attribution."
+    }
+  }
+}

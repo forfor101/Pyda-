@@ -1,0 +1,520 @@
+import { CarHireVehicle, VaultDocument, CarHireBookingData } from '../types';
+
+export const CAR_HIRE_VEHICLES: CarHireVehicle[] = [
+  {
+    id: 'prado-txl-2024',
+    name: 'Toyota Land Cruiser Prado TXL 4x4 (2024)',
+    category: 'suv',
+    modelYear: '2024',
+    seats: 7,
+    luggageCapacity: '5 Large Suitcases + 3 Hand Luggage',
+    dailyRateIntraStateNaira: 145000,
+    dailyRateInterStateNaira: 245000,
+    tollAllowanceInterStateNaira: 18000,
+    chauffeurAllowanceNaira: 20000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 120000,
+    imageUrl: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+    description: 'Premier executive SUV with superior ground clearance, dual AC, plush leather interior, and robust 4WD for interstate highway smoothness.',
+    features: [
+      'Model Year: 2024 Current Edition',
+      'Dual-Zone Heavy-Duty Tropicalized AC',
+      'High-Speed In-Car Wi-Fi & USB Charging Ports',
+      'Satellite GPS Tracking & SOS Emergency Panic Button',
+      'Complimentary Bottled Water & Daily Refreshments',
+      'Comprehensive Goods & Passenger Insurance'
+    ],
+    plateNumberExample: 'ABJ-482-XY'
+  },
+  {
+    id: 'mercedes-e-class',
+    name: 'Mercedes-Benz E-Class Executive Sedan (2023)',
+    category: 'sedan',
+    modelYear: '2023',
+    seats: 4,
+    luggageCapacity: '3 Executive Suitcases',
+    dailyRateIntraStateNaira: 110000,
+    dailyRateInterStateNaira: 195000,
+    tollAllowanceInterStateNaira: 15000,
+    chauffeurAllowanceNaira: 15000,
+    armoredEscortAvailable: false,
+    imageUrl: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+    description: 'Sophisticated corporate luxury sedan, ideal for diplomatic meetings, C-suite city charters, and executive airport transfers.',
+    features: [
+      'Model Year: 2023 Executive Trim',
+      'Ergonomic Leather Reclining Seats with Heating/Cooling',
+      'Burmester Surround Sound System',
+      'Rear Privacy Sunshades & Tinted Glass',
+      'Professional Uniformed Protocol Chauffeur',
+      'Full Airport Meet-and-Greet Protocol Included'
+    ],
+    plateNumberExample: 'LAG-918-EK'
+  },
+  {
+    id: 'coaster-executive-30-2025',
+    name: 'Toyota Coaster 30-Seater Executive Coach (2025 Model)',
+    category: 'coaster',
+    modelYear: '2025',
+    seats: 30,
+    luggageCapacity: '25 Large Suitcases + Overhead Lockers + Underfloor Bay',
+    dailyRateIntraStateNaira: 195000,
+    dailyRateInterStateNaira: 320000,
+    tollAllowanceInterStateNaira: 28000,
+    chauffeurAllowanceNaira: 25000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 120000,
+    imageUrl: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+    description: 'Premier 2025 Toyota Coaster 30-Seater Executive Coach. Factory dual-compressor tropicalized roof AC, high-back reclining velour seats with 3-point seatbelts, dedicated PA microphone system, USB fast-charging ports for all rows, and rear luggage cavern.',
+    features: [
+      'Model Year: 2025 Flagship Coach Edition',
+      '30 High-Back Ergonomic Reclining Seats with 3-Point Belts',
+      'Dual Tropicalized Roof AC with Individual Passenger Louvers',
+      'Public Address (PA) Microphone for Tour Guides & Convoys',
+      'Deep Underfloor Baggage Bay & Overhead Luggage Racks',
+      'Heavy-Duty Highway Suspension & Electronic Speed Limiter'
+    ],
+    plateNumberExample: 'ABJ-904-CT'
+  },
+  {
+    id: 'coaster-vip-lounge-26-2024',
+    name: 'Toyota Coaster VIP Royal Lounge 26-Seater (2024 Model)',
+    category: 'coaster',
+    modelYear: '2024',
+    seats: 26,
+    luggageCapacity: '20 Executive Bags + Onboard Beverage Chiller',
+    dailyRateIntraStateNaira: 230000,
+    dailyRateInterStateNaira: 360000,
+    tollAllowanceInterStateNaira: 28000,
+    chauffeurAllowanceNaira: 30000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 130000,
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+    description: '2024 VIP Executive Lounge Coaster conversion. Premium 2+1 wide captain leather reclining seats, onboard 24V beverage cooler, ambient starlight LED cabin lighting, conference fold-out work desks, and dual-zone climate management.',
+    features: [
+      'Model Year: 2024 VIP Royal Edition',
+      '26 Ultra-Plush Captain Leather Recliners (2+1 Layout)',
+      'Onboard Beverage Cooler & Cold Storage Chiller',
+      'Overhead Smart Multimedia Monitor & Acoustic Surround',
+      'Double-Glazed Tinted Privacy UV Glass',
+      'Full Diplomatic Meet & Greet Protocol Included'
+    ],
+    plateNumberExample: 'LAG-831-XP'
+  },
+  {
+    id: 'coaster-deluxe-32-2023',
+    name: 'Toyota Coaster Deluxe Tour Coach 32-Seater (2023 Model)',
+    category: 'coaster',
+    modelYear: '2023',
+    seats: 32,
+    luggageCapacity: '28 Travel Bags + Large Rear Underbody Bay',
+    dailyRateIntraStateNaira: 175000,
+    dailyRateInterStateNaira: 290000,
+    tollAllowanceInterStateNaira: 25000,
+    chauffeurAllowanceNaira: 25000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 110000,
+    imageUrl: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80',
+    description: '2023 Toyota Coaster 32-Seater Deluxe Tour Coach. 4.2L 6-Cylinder Diesel workhorse with heavy-duty long-range dual fuel tanks, reinforced chassis for inter-state highways, automatic sliding entry door, and high-capacity AC.',
+    features: [
+      'Model Year: 2023 Deluxe Tour Edition',
+      '32 Form-Fitting High-Back Seats with Fold-Down Aisle Jump Seats',
+      'High-Capacity Dual-Blower Ceiling Climate System',
+      'Automatic Pneumatic Passenger Slide-Gliding Entry Door',
+      'Heavy-Duty Highway Shock Absorbers & Reinforced Chassis',
+      'Roof Emergency Escape Hatch & Complete Trauma First-Aid Gear'
+    ],
+    plateNumberExample: 'RSH-412-MK'
+  },
+  {
+    id: 'coaster-standard-30-2022',
+    name: 'Toyota Coaster Standard Staff Shuttle 30-Seater (2022 Model)',
+    category: 'coaster',
+    modelYear: '2022',
+    seats: 30,
+    luggageCapacity: '20 Bags + Overhead Parcel Racks',
+    dailyRateIntraStateNaira: 155000,
+    dailyRateInterStateNaira: 260000,
+    tollAllowanceInterStateNaira: 22000,
+    chauffeurAllowanceNaira: 20000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 100000,
+    imageUrl: 'https://images.unsplash.com/photo-1509749837427-ac94a2553d0e?auto=format&fit=crop&w=800&q=80',
+    description: '2022 Fleet Standard 30-Seater Toyota Coaster. Proven reliability for large corporate staff transfers, conference delegations, sports teams, and institutional projects across all Nigerian highway corridors.',
+    features: [
+      'Model Year: 2022 Fleet Standard',
+      '30 Durable High-Density Fabric Seats with Retractable Belts',
+      'Rapid Airflow Air Conditioning System',
+      'Anti-Lock Braking System (ABS) & Hydraulic Exhaust Brake',
+      'VHF Convoy Radio & Digital GPS Speed Tracking',
+      'Vetted Highway Protocol Captain & Relief Driver Included'
+    ],
+    plateNumberExample: 'KN-672-TR'
+  },
+  {
+    id: 'armored-lc300-b6',
+    name: 'Armored Toyota Land Cruiser 300 V8 (B6/B7 Ballistic)',
+    category: 'suv',
+    modelYear: '2024',
+    seats: 6,
+    luggageCapacity: '4 Suitcases',
+    dailyRateIntraStateNaira: 480000,
+    dailyRateInterStateNaira: 680000,
+    tollAllowanceInterStateNaira: 25000,
+    chauffeurAllowanceNaira: 35000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 150000,
+    imageUrl: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
+    description: 'Certified B6/B7 Ballistic Armored Protection. Withstands high-powered rifle rounds and DM51 grenade blasts. Run-flat tire systems and reinforced chassis.',
+    features: [
+      'Model Year: 2024 Tactical Edition',
+      'Certified B6/B7 Ballistic Glass & Armored Steel Cell',
+      'Hutchinson Run-Flat Tire Inserts (up to 80 km at 50 km/h)',
+      'Underbody Blast Protection & Fuel Tank Armor',
+      'Trained Tactical Defensive Evasion Chauffeur',
+      'Optional 4-Man Armed MOPOL / Police Escort Convoy'
+    ],
+    plateNumberExample: 'KJA-701-BH'
+  },
+  {
+    id: 'lexus-lx600-vip',
+    name: 'Lexus LX600 Ultra Luxury Executive VIP (2024)',
+    category: 'suv',
+    modelYear: '2024',
+    seats: 5,
+    luggageCapacity: '4 Large Suitcases',
+    dailyRateIntraStateNaira: 230000,
+    dailyRateInterStateNaira: 390000,
+    tollAllowanceInterStateNaira: 20000,
+    chauffeurAllowanceNaira: 25000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 130000,
+    imageUrl: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
+    description: 'Ultra-prestigious flagship VIP SUV with massage rear captain seats, active height control suspension, and unmatched roadside commanding presence.',
+    features: [
+      'Model Year: 2024 VIP Flagship',
+      'Rear Seat Entertainment Screens & Wireless Audio',
+      'Executive Ottoman Reclining Lounge Seats',
+      'Multi-Terrain Active Height Control Suspension',
+      'Dedicated Chauffeur & Logistics Support Line',
+      '24/7 Satellite Telematics & Highway Escort Assistance'
+    ],
+    plateNumberExample: 'RSH-229-AA'
+  },
+  {
+    id: 'hiace-executive-14',
+    name: 'Toyota HiAce VIP Executive High-Roof (14-Seater)',
+    category: 'bus',
+    modelYear: '2024',
+    seats: 14,
+    luggageCapacity: '10 Suitcases + Overhead Racks',
+    dailyRateIntraStateNaira: 130000,
+    dailyRateInterStateNaira: 220000,
+    tollAllowanceInterStateNaira: 20000,
+    chauffeurAllowanceNaira: 20000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 110000,
+    imageUrl: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+    description: 'Spacious executive shuttle bus designed for corporate delegations, family relocations, project inspections, and wedding convoys.',
+    features: [
+      'Model Year: 2024 Executive Shuttle',
+      '14 Independent High-Back Reclining Velvet Seats',
+      'Roof-Mounted Ducted Multi-Vent Air Conditioning',
+      'Wide Center Aisle & Panoramic Tinted Windows',
+      'PA Public Address Microphone for Guided Convoys',
+      'Full Fire Extinguisher & First-Aid Trauma Kit'
+    ],
+    plateNumberExample: 'APP-554-DE'
+  },
+  {
+    id: 'hilux-escort-4x4',
+    name: 'Toyota Hilux 4x4 Double Cabin (Escort & Chase)',
+    category: 'escort',
+    modelYear: '2023',
+    seats: 5,
+    luggageCapacity: 'Open Heavy Payload Bed (1 Ton)',
+    dailyRateIntraStateNaira: 90000,
+    dailyRateInterStateNaira: 165000,
+    tollAllowanceInterStateNaira: 12000,
+    chauffeurAllowanceNaira: 15000,
+    armoredEscortAvailable: true,
+    armoredEscortDailyNaira: 95000,
+    imageUrl: 'https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=800&q=80',
+    description: 'Reliable 4x4 chase and logistics support vehicle. Perfect for baggage overflow, security personnel transport, or rugged field site visits.',
+    features: [
+      'Model Year: 2023 Heavy Duty',
+      'Heavy-Duty Bullbar & High-Intensity Strobe Beacons',
+      'Weather-Proof Heavy Canvas Bed Cover Available',
+      'Off-Road Mud-Terrain Tires for Challenging Corridors',
+      'Dual Fuel Tanks for Long Interstate Ranges',
+      'Direct VHF Radio Link with Convoy Lead Car'
+    ],
+    plateNumberExample: 'GWA-312-LK'
+  }
+];
+
+export interface PopularCarHireRoute {
+  id: string;
+  tripType: 'intra_state' | 'inter_state';
+  title: string;
+  origin: string;
+  destination: string;
+  typicalDistanceKm: number;
+  tollEstimateNaira: number;
+  notes: string;
+}
+
+export const POPULAR_CAR_HIRE_ROUTES: PopularCarHireRoute[] = [
+  {
+    id: 'lagos-intra-city',
+    tripType: 'intra_state',
+    title: 'Lagos Metropolitan Daily Charter',
+    origin: 'Victoria Island / Ikoyi, Lagos',
+    destination: 'Ikeja / Lekki / MMIA Airport, Lagos',
+    typicalDistanceKm: 65,
+    tollEstimateNaira: 5000,
+    notes: 'Unlimited stops across Lagos Island, Victoria Island, Ikeja GRA, and Lekki corridor for 12 hours.'
+  },
+  {
+    id: 'abuja-intra-city',
+    tripType: 'intra_state',
+    title: 'Abuja Diplomatic & Airport Protocol',
+    origin: 'Maitama / Asokoro, Abuja FCT',
+    destination: 'Nnamdi Azikiwe Airport / Central Area, Abuja',
+    typicalDistanceKm: 55,
+    tollEstimateNaira: 2000,
+    notes: 'Airport reception, ministry meetings, and presidential villa corridor charter.'
+  },
+  {
+    id: 'lagos-abuja-interstate',
+    tripType: 'inter_state',
+    title: 'Lagos to Abuja Interstate VIP Highway Transit',
+    origin: 'Victoria Island, Lagos State',
+    destination: 'Maitama, Abuja FCT',
+    typicalDistanceKm: 760,
+    tollEstimateNaira: 25000,
+    notes: 'Via Sagamu - Benin - Lokoja expressway. Recommended with Prado SUV or Armed MOPOL Escort.'
+  },
+  {
+    id: 'lagos-ibadan-interstate',
+    tripType: 'inter_state',
+    title: 'Lagos to Ibadan Expressway Executive Run',
+    origin: 'Ikeja GRA, Lagos State',
+    destination: 'Bodija / Jericho, Ibadan, Oyo State',
+    typicalDistanceKm: 135,
+    tollEstimateNaira: 8000,
+    notes: 'Fast 2-hour executive inter-city transit via Lagos-Ibadan 8-lane expressway.'
+  },
+  {
+    id: 'abuja-kaduna-interstate',
+    tripType: 'inter_state',
+    title: 'Abuja to Kaduna Secured Highway Corridor',
+    origin: 'Central Business District, Abuja FCT',
+    destination: 'Kaduna South / Kaduna City, Kaduna State',
+    typicalDistanceKm: 190,
+    tollEstimateNaira: 12000,
+    notes: 'Includes dedicated satellite GPS tracking and escort-cleared protocol clearance.'
+  },
+  {
+    id: 'ph-intra-oil-gas',
+    tripType: 'intra_state',
+    title: 'Port Harcourt Oil & Gas Terminal Run',
+    origin: 'Old GRA / Peter Odili Rd, Port Harcourt',
+    destination: 'Onne Free Zone / Port Harcourt Airport (OMH)',
+    typicalDistanceKm: 70,
+    tollEstimateNaira: 6000,
+    notes: 'Compliant with IOC oil & gas safety protocol, high-visibility vest, and safety gear.'
+  }
+];
+
+export const VETTED_CHAUFFEURS = [
+  {
+    name: 'Captain Babatunde Alabi',
+    phone: '+234 803 441 9021',
+    experienceYears: 14,
+    clearance: 'State House & Diplomatic Protocol Certified',
+    languages: 'English, Yoruba, Hausa',
+    badgeNumber: 'CH-DRV-0891'
+  },
+  {
+    name: 'Officer Usman Danjuma',
+    phone: '+234 802 882 4192',
+    experienceYears: 11,
+    clearance: 'Tactical Defensive Driving & Anti-Hijack Trained',
+    languages: 'English, Hausa, Pidgin',
+    badgeNumber: 'CH-DRV-1142'
+  },
+  {
+    name: 'Emeka Christian Okon',
+    phone: '+234 814 620 3381',
+    experienceYears: 9,
+    clearance: 'Corporate Executive & MMIA Airport Vetted',
+    languages: 'English, Igbo, Yoruba',
+    badgeNumber: 'CH-DRV-2045'
+  }
+];
+
+/**
+ * Pre-populated official sample Car Hire documents for DocumentVault
+ */
+export const SAMPLE_CAR_HIRE_VAULT_DOCS: VaultDocument[] = [
+  {
+    id: 'DOC-CHI-2026-891',
+    title: 'Official Inter-State Car Hire Pro-Forma Invoice - Ref #CHI-PYDA-2026-891',
+    docType: 'car_hire_invoice',
+    referenceNumber: 'CHI-PYDA-2026-891',
+    issuedDate: '2026-08-23',
+    expiryDate: '2026-09-23',
+    status: 'active',
+    fileSize: '390 KB',
+    underwriterOrIssuer: 'Pyda Executive Fleet & Chauffeur Services Directorate',
+    coverageAmountNaira: 1148625,
+    originCity: 'Plot 14, Victoria Island, Lagos State',
+    destinationCity: 'Maitama District, Abuja FCT',
+    signatories: [
+      'Alhaji M. Belgore (Fleet Operations Director)',
+      'Dr. Yerima Forfor (Consignee / Client)'
+    ],
+    summaryText:
+      'Official Inter-State Chauffeur Service Pro-Forma Commercial Invoice issued to Dr. Yerima Forfor (Apex Corporate Chambers). Vehicle: Toyota Land Cruiser Prado TXL 4x4 (Plate: ABJ-482-XY). Route: Victoria Island, Lagos to Maitama, Abuja FCT (~760 KM). Duration: 3 Full Days. Includes dedicated vetted driver (Capt. Babatunde Alabi), highway toll pass allocations, and 4-Man Armed MOPOL Security Escort convoy. Total Invoice Amount: NGN ₦1,148,625 (VAT 7.5% included).',
+    verifiedStampCode: 'PKI-CHI-SEAL-89124',
+    tags: ['Car Hire', 'Inter-State', 'Invoice', 'Pro-Forma', 'Executive SUV', 'MOPOL Escort'],
+    clientName: 'Dr. Yerima Forfor',
+    clientCompany: 'Apex Corporate Chambers',
+    clientPhone: '+234 803 892 1102',
+    clientEmail: 'yerimaforfor@gmail.com',
+    serviceType: 'car_hire',
+    carHireTripType: 'inter_state',
+    carHireVehicle: 'Toyota Land Cruiser Prado TXL 4x4 (2024)',
+    carHirePlateNumber: 'ABJ-482-XY',
+    carHireChauffeurName: 'Captain Babatunde Alabi',
+    carHireChauffeurPhone: '+234 803 441 9021',
+    carHireTotalDays: 3,
+    carHirePickupDate: '2026-08-25',
+    carHireReturnDate: '2026-08-28',
+    carHireSubtotalNaira: 1068500,
+    carHireVatNaira: 80125,
+    carHireTollNaira: 25000,
+    carHireSecurityEscort: true,
+    carHireBookingData: {
+      documentType: 'invoice',
+      tripType: 'inter_state',
+      invoiceOrReceiptNumber: 'CHI-PYDA-2026-891',
+      issueDate: '2026-08-23',
+      dueDate: '2026-09-23',
+      status: 'pending',
+      clientName: 'Dr. Yerima Forfor',
+      clientCompany: 'Apex Corporate Chambers',
+      clientEmail: 'yerimaforfor@gmail.com',
+      clientPhone: '+234 803 892 1102',
+      clientAddress: 'Plot 14, Victoria Island, Lagos',
+      taxIdentificationNumber: 'TIN-9281726-001',
+      vehicleId: 'prado-txl-2024',
+      vehicleName: 'Toyota Land Cruiser Prado TXL 4x4 (2024)',
+      vehiclePlateNumber: 'ABJ-482-XY',
+      chauffeurName: 'Captain Babatunde Alabi',
+      chauffeurPhone: '+234 803 441 9021',
+      chauffeurLicenseNo: 'DRV-FED-99218',
+      originCity: 'Lagos State',
+      originAddress: 'Plot 14, Victoria Island, Lagos',
+      destinationCity: 'Abuja FCT',
+      destinationAddress: 'Maitama District, Abuja FCT',
+      pickupDate: '2026-08-25',
+      pickupTime: '06:30 AM',
+      returnDate: '2026-08-28',
+      returnTime: '07:00 PM',
+      totalDays: 3,
+      dailyBaseRateNaira: 245000,
+      totalBaseHireNaira: 735000,
+      tollAllowanceNaira: 25000,
+      chauffeurAllowanceNaira: 60000,
+      securityEscortIncluded: true,
+      securityEscortNaira: 248500,
+      subtotalNaira: 1068500,
+      vatRatePercent: 7.5,
+      vatAmountNaira: 80125,
+      totalAmountNaira: 1148625,
+      paymentMethod: 'bank_transfer',
+      paymentReference: 'PENDING-PO-CHI-891',
+      notes: 'Interstate high-security executive convoy. Armed escort lead vehicle attached.'
+    }
+  },
+  {
+    id: 'DOC-CHR-2026-642',
+    title: 'Official Intra-State Car Hire Tax Clearance Receipt - Ref #CHR-PYDA-2026-642',
+    docType: 'car_hire_receipt',
+    referenceNumber: 'CHR-PYDA-2026-642',
+    issuedDate: '2026-08-21',
+    status: 'settled',
+    fileSize: '365 KB',
+    underwriterOrIssuer: 'Pyda Finance & Treasury Department (Official FIRS Authorized)',
+    coverageAmountNaira: 139750,
+    originCity: 'Victoria Island, Lagos State',
+    destinationCity: 'Ikeja GRA / MMIA Airport, Lagos State',
+    signatories: [
+      'F. Ogundimu (Chief Financial Officer, Pyda Logistics)',
+      'Emeka Christian Okon (Senior Protocol Driver)'
+    ],
+    summaryText:
+      'Official Settled Tax Clearance Receipt for 1-Day Intra-State Metropolitan Executive Chauffeur Charter. Vehicle: Mercedes-Benz E-Class Executive Sedan (Plate: LAG-918-EK). Client: Adeleke Holdings Ltd. Status: PAID IN FULL via Central Bank NIBSS Instant Payment (NIP). FIRS e-Receipt Stamp verified.',
+    verifiedStampCode: 'FIRS-NIP-PAID-CHR-64290',
+    tags: ['Car Hire', 'Intra-State', 'Receipt', 'Tax-Cleared', 'Paid', 'Mercedes-Benz'],
+    clientName: 'Chief Emeka Adeleke',
+    clientCompany: 'Adeleke Logistics & Holdings Ltd',
+    clientPhone: '+234 803 555 0192',
+    clientEmail: 'emeka.adeleke@groupcorp.ng',
+    serviceType: 'car_hire',
+    carHireTripType: 'intra_state',
+    carHireVehicle: 'Mercedes-Benz E-Class Executive Sedan',
+    carHirePlateNumber: 'LAG-918-EK',
+    carHireChauffeurName: 'Emeka Christian Okon',
+    carHireChauffeurPhone: '+234 814 620 3381',
+    carHireTotalDays: 1,
+    carHirePickupDate: '2026-08-21',
+    carHireReturnDate: '2026-08-21',
+    carHireSubtotalNaira: 130000,
+    carHireVatNaira: 9750,
+    carHireTollNaira: 5000,
+    carHireSecurityEscort: false,
+    carHireBookingData: {
+      documentType: 'receipt',
+      tripType: 'intra_state',
+      invoiceOrReceiptNumber: 'CHR-PYDA-2026-642',
+      issueDate: '2026-08-21',
+      status: 'settled',
+      clientName: 'Chief Emeka Adeleke',
+      clientCompany: 'Adeleke Logistics & Holdings Ltd',
+      clientEmail: 'emeka.adeleke@groupcorp.ng',
+      clientPhone: '+234 803 555 0192',
+      clientAddress: 'Victoria Island, Lagos',
+      taxIdentificationNumber: 'TIN-4819201-002',
+      vehicleId: 'mercedes-e-class',
+      vehicleName: 'Mercedes-Benz E-Class Executive Sedan',
+      vehiclePlateNumber: 'LAG-918-EK',
+      chauffeurName: 'Emeka Christian Okon',
+      chauffeurPhone: '+234 814 620 3381',
+      chauffeurLicenseNo: 'DRV-LAG-77312',
+      originCity: 'Lagos State',
+      originAddress: 'Victoria Island, Lagos',
+      destinationCity: 'Lagos State',
+      destinationAddress: 'Ikeja GRA & MMIA International Terminal, Lagos',
+      pickupDate: '2026-08-21',
+      pickupTime: '08:00 AM',
+      returnDate: '2026-08-21',
+      returnTime: '08:00 PM',
+      totalDays: 1,
+      dailyBaseRateNaira: 110000,
+      totalBaseHireNaira: 110000,
+      tollAllowanceNaira: 5000,
+      chauffeurAllowanceNaira: 15000,
+      securityEscortIncluded: false,
+      securityEscortNaira: 0,
+      subtotalNaira: 130000,
+      vatRatePercent: 7.5,
+      vatAmountNaira: 9750,
+      totalAmountNaira: 139750,
+      paymentMethod: 'bank_transfer',
+      paymentReference: 'NIP-CBN-20260821-PYDA-78921',
+      notes: 'Full-day corporate roadshow and airport protocol. Settled in full.'
+    }
+  }
+];

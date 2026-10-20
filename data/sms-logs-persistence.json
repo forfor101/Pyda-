@@ -1,0 +1,24 @@
+[
+  {
+    "id": "SMS-1789829213004-p3q8z",
+    "recipient": "+2348062466212",
+    "message": "[PRE-FLIGHT TEST] Test flood alert for Chief Yerima convoy #TEMA-84920",
+    "status": "sent",
+    "provider": "native_nigerian_gateway",
+    "messageSid": "SM_mt_1789829213004_j0s8v1",
+    "dispatchedAt": "2026-09-19T14:46:53.004Z",
+    "docReference": "PREFLIGHT-BATCH-TEST",
+    "docType": "test_batch_weather_delay"
+  },
+  {
+    "id": "SMS-INIT-001",
+    "recipient": "+2348062466212",
+    "message": "Pyda Movers: Your Goods-In-Transit Insurance Policy #NIA-GIT-POL-8841-NG (₦25,000,000 All-Risk Cover) is now active and ready in your Document Vault.",
+    "status": "delivered",
+    "provider": "native_nigerian_gateway",
+    "messageSid": "SM_mt_cert_init_8841",
+    "dispatchedAt": "2026-09-19T12:46:50.278Z",
+    "docReference": "NIA-GIT-POL-8841-NG",
+    "docType": "insurance_certificate"
+  }
+]

@@ -1,0 +1,90 @@
+[
+  {
+    "id": "EMAIL-1791533098989-lbuoz",
+    "type": "test_email",
+    "recipient": "yerimaforfor@gmail.com",
+    "subject": "Pyda Movers Email Gateway Test - Automated Verification",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791533098989_x5dewz",
+    "dispatchedAt": "2026-10-09T08:04:58.989Z",
+    "previewSnippet": "Pyda Movers Email Service Test - Operational."
+  },
+  {
+    "id": "EMAIL-1791532639299-o6lru",
+    "type": "test_email",
+    "recipient": "test@example.com",
+    "subject": "Test Delivery",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791532639299_70x2hy",
+    "dispatchedAt": "2026-10-09T07:57:19.300Z",
+    "previewSnippet": "Test Delivery"
+  },
+  {
+    "id": "EMAIL-1791456438972-9hphq",
+    "type": "test_email",
+    "recipient": "yerimaforfor@gmail.com",
+    "subject": "Pyda Movers Email Gateway Test - Automated Verification",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791456438972_69oqbu",
+    "dispatchedAt": "2026-10-08T10:47:18.972Z",
+    "previewSnippet": "Pyda Movers Email Service Test - Operational."
+  },
+  {
+    "id": "EMAIL-1791456377528-c02kl",
+    "type": "test_email",
+    "recipient": "yerimaforfor@gmail.com",
+    "subject": "Pyda Movers Test Verification",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791456377528_p8m8ff",
+    "dispatchedAt": "2026-10-08T10:46:17.529Z",
+    "previewSnippet": "Pyda Movers Test Verification"
+  },
+  {
+    "id": "EMAIL-1791456357852-c0hzs",
+    "type": "test_email",
+    "recipient": "yerimaforfor@gmail.com",
+    "subject": "Pyda Movers Test Verification",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791456357852_3tsqey",
+    "dispatchedAt": "2026-10-08T10:45:57.852Z",
+    "previewSnippet": "Pyda Movers Test Verification"
+  },
+  {
+    "id": "EMAIL-1791456116796-xdf9p",
+    "type": "test_email",
+    "recipient": "test@example.com",
+    "subject": "Test Subject",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791456128037_bdpvn8",
+    "dispatchedAt": "2026-10-08T10:42:08.038Z",
+    "previewSnippet": "Test Subject"
+  },
+  {
+    "id": "EMAIL-1791455996422-e6nj8",
+    "type": "test_email",
+    "recipient": "phpn1908@gmail.com",
+    "subject": "📦 Welcome to Pyda Movers Logistics Insider",
+    "status": "sent",
+    "provider": "native_engine",
+    "messageId": "msg_mt_1791456007873_1ovu1v",
+    "dispatchedAt": "2026-10-08T10:40:07.874Z",
+    "previewSnippet": "Welcome to Pyda Movers & Logistics Newsletter! Abuja: 08062466212 | Lagos: 08025609972"
+  },
+  {
+    "id": "EMAIL-INIT-001",
+    "type": "quote_confirmation",
+    "recipient": "aliu@saharalogistics.ng",
+    "subject": "🚚 Quotation Confirmation - Relocation Ref #QUOTE-77102 | Pyda Movers",
+    "status": "delivered",
+    "provider": "native_engine",
+    "messageId": "msg_mt_initial_quote_77102",
+    "dispatchedAt": "2026-10-08T09:38:29.589Z",
+    "previewSnippet": "Quotation Confirmation for Interstate Freight Lagos to Abuja (Estimated ₦1,850,000)"
+  }
+]
