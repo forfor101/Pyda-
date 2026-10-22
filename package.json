@@ -1,12 +1,13 @@
 {
-  "name": "react-example",
+  "name": "pyda-movers",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "tsx server.ts",
     "generate:sitemap": "tsx scripts/generate-sitemap.ts",
     "build": "tsx scripts/generate-sitemap.ts && vite build",
+    "preview": "vite preview",
     "start": "node server.ts",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"

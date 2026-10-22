@@ -8,7 +8,7 @@
                             http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
     <image:image>
@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <image:image>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/corporate</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/commercial</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/residential</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -64,7 +64,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#services/haulage</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#calculator</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -84,7 +84,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#checklist</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
     <image:image>
@@ -94,7 +94,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#tracking</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -104,7 +104,7 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#coverage</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
     <image:image>
@@ -114,19 +114,19 @@
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#about</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#contact</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://ais-dev-g3r6koyr7xktnfqckyegu5-905805869757.europe-west2.run.app/#careers</loc>
-    <lastmod>2026-09-30T22:34:10.368Z</lastmod>
+    <lastmod>2026-10-22T20:49:03.807Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>

@@ -30,7 +30,19 @@
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&h=630&q=80" />
   </head>
   <body>
-    <div id="root"></div>
+    <script type="text/javascript">
+      // GitHub Pages SPA URL receiver for custom domain subroutes
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
