@@ -46,6 +46,7 @@ import { IssueInsuranceModal } from './IssueInsuranceModal';
 import { SmsGatewayLogModal } from './SmsGatewayLogModal';
 import { BulkPrintPackageModal } from './BulkPrintPackageModal';
 import { DocumentPrintPreviewModal } from './DocumentPrintPreviewModal';
+import { PdfContractViewerModal } from './PdfContractViewerModal';
 import { ExportPackingSlipModal } from './ExportPackingSlipModal';
 import { downloadConsolidatedPackage, printConsolidatedPackage } from '../utils/vaultPdfPackage';
 import { downloadProformaInvoicePdf } from '../utils/proformaInvoiceGenerator';
@@ -343,9 +344,18 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
   const [isPrintPreviewModalOpen, setIsPrintPreviewModalOpen] = useState<boolean>(false);
   const [isPackingSlipModalOpen, setIsPackingSlipModalOpen] = useState<boolean>(false);
 
+  // Interactive PDF Contract Previewer Modal State
+  const [pdfViewerDoc, setPdfViewerDoc] = useState<VaultDocument | null>(null);
+  const [isPdfViewerModalOpen, setIsPdfViewerModalOpen] = useState<boolean>(false);
+
   const handleOpenPrintPreview = (doc: VaultDocument) => {
     setPrintPreviewDoc(doc);
     setIsPrintPreviewModalOpen(true);
+  };
+
+  const handleOpenPdfViewer = (doc: VaultDocument) => {
+    setPdfViewerDoc(doc);
+    setIsPdfViewerModalOpen(true);
   };
 
   // SMS Gateway & Modal States
@@ -989,6 +999,25 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
         </div>
 
         <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
+          {/* Interactive PDF Contract Previewer Button */}
+          <button
+            type="button"
+            onClick={() => {
+              const targetDoc =
+                (selectedDocIds.length > 0 && documents.find((d) => d.id === selectedDocIds[0])) ||
+                filteredDocs.find((d) => d.docType === 'moving_agreement') ||
+                filteredDocs[0] ||
+                documents[0];
+              if (targetDoc) handleOpenPdfViewer(targetDoc);
+            }}
+            className="bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/40 text-amber-300 hover:text-amber-200 font-bold text-xs px-3.5 py-2.5 rounded-xl shadow flex items-center gap-1.5 transition-all active:scale-95"
+            id="open-vault-pdf-viewer-btn"
+            title="Open Interactive Multi-Page PDF Contract Previewer before printing"
+          >
+            <FileText className="w-3.5 h-3.5 text-amber-400" />
+            <span>PDF Previewer</span>
+          </button>
+
           {/* Live Print-Friendly Preview Button */}
           <button
             type="button"
@@ -1401,7 +1430,11 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
                             </span>
                           )}
                         </div>
-                        <h4 className="text-sm sm:text-base font-extrabold text-white leading-snug">
+                        <h4
+                          onClick={() => handleOpenPdfViewer(doc)}
+                          className="text-sm sm:text-base font-extrabold text-white leading-snug cursor-pointer hover:text-amber-400 transition-colors"
+                          title="Click to preview full document in interactive PDF reader"
+                        >
                           {doc.title}
                         </h4>
                       </div>
@@ -1497,11 +1530,23 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
                 <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-slate-800">
                   <button
                     type="button"
-                    onClick={() => setPreviewDoc(doc)}
-                    className="flex-1 min-w-[75px] bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold text-xs py-2 px-2 rounded-xl border border-slate-700 flex items-center justify-center gap-1 transition-colors"
+                    onClick={() => handleOpenPdfViewer(doc)}
+                    className="flex-1 min-w-[90px] bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 hover:text-amber-200 font-bold text-xs py-2 px-2.5 rounded-xl border border-amber-500/35 hover:border-amber-500/60 flex items-center justify-center gap-1.5 transition-all shadow-sm active:scale-95"
+                    title="Open in interactive PDF Contract Previewer before printing"
+                    id={`preview-pdf-btn-${doc.id}`}
                   >
-                    <Eye className="w-3.5 h-3.5 text-amber-400" />
-                    <span>View</span>
+                    <FileText className="w-3.5 h-3.5 text-amber-400" />
+                    <span>Preview PDF</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => setPreviewDoc(doc)}
+                    className="flex-none bg-slate-800 hover:bg-slate-750 text-slate-300 hover:text-white font-bold text-xs py-2 px-2.5 rounded-xl border border-slate-700 flex items-center justify-center gap-1 transition-colors"
+                    title="View Summary Details"
+                  >
+                    <Eye className="w-3.5 h-3.5 text-slate-400" />
+                    <span className="hidden sm:inline">Details</span>
                   </button>
 
                   <button
@@ -2043,6 +2088,21 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
                   onClick={() => {
                     const d = previewDoc;
                     setPreviewDoc(null);
+                    handleOpenPdfViewer(d);
+                  }}
+                  className="bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 hover:text-amber-200 font-bold text-xs px-3.5 py-2.5 rounded-xl border border-amber-500/40 flex items-center gap-1.5 transition-all active:scale-95"
+                  id="vault-preview-to-pdf-viewer-btn"
+                  title="Open interactive multi-page PDF Contract Previewer"
+                >
+                  <FileText className="w-4 h-4 text-amber-400" />
+                  <span>PDF Previewer</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    const d = previewDoc;
+                    setPreviewDoc(null);
                     handleOpenPrintPreview(d);
                   }}
                   className="bg-slate-800 hover:bg-slate-750 text-amber-400 hover:text-amber-300 font-bold text-xs px-3.5 py-2.5 rounded-xl border border-slate-700 flex items-center gap-1.5 transition-all"
@@ -2125,6 +2185,19 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
               type="button"
               onClick={() => {
                 const target = selectedDocs[0] || documents[0];
+                if (target) handleOpenPdfViewer(target);
+              }}
+              className="bg-amber-500/15 hover:bg-amber-500/25 text-amber-300 hover:text-amber-200 font-bold text-xs px-3 py-2 rounded-xl border border-amber-500/40 flex items-center gap-1.5 transition-all active:scale-95"
+              title="Open full interactive PDF Contract Previewer for selected document"
+            >
+              <FileText className="w-3.5 h-3.5 text-amber-400" />
+              <span className="hidden sm:inline">Preview PDF</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => {
+                const target = selectedDocs[0] || documents[0];
                 if (target) handleOpenPrintPreview(target);
               }}
               className="bg-slate-800 hover:bg-slate-750 text-amber-400 hover:text-amber-300 font-bold text-xs px-3 py-2 rounded-xl border border-slate-750 flex items-center gap-1.5 transition-all active:scale-95"
@@ -2186,6 +2259,26 @@ export const DocumentVault: React.FC<DocumentVaultProps> = ({
         currentUser={currentUser}
         companyPhone={phone}
         onDownloadPdf={handleDownloadPdf}
+      />
+
+      {/* Interactive PDF Contract Previewer Modal */}
+      <PdfContractViewerModal
+        isOpen={isPdfViewerModalOpen}
+        onClose={() => {
+          setIsPdfViewerModalOpen(false);
+          setPdfViewerDoc(null);
+        }}
+        document={pdfViewerDoc}
+        currentUser={currentUser}
+        companyPhone={phone}
+        onOpenSignModal={(d) => {
+          setIsPdfViewerModalOpen(false);
+          if (onOpenSignModal) onOpenSignModal(d);
+        }}
+        onOpenPrintSettings={(d) => {
+          setIsPdfViewerModalOpen(false);
+          handleOpenPrintPreview(d);
+        }}
       />
 
       {/* Export Inventory Packing Slip Modal */}
